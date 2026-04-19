@@ -38,8 +38,6 @@ export class AppComponent implements OnInit {
   displayedResults = [];
   displayedIndex = 0;
 
-  constructor() { }
-
   ngOnInit() {
     this.addEntry(1, "Floride", 18.5);
     this.addEntry(2, "Edmonton", 13.5);
@@ -66,24 +64,13 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    let i = 0;
     while (this.results.length < 2) {
       let randomTeam = this.getRandomTeam();
       if (!this.results.includes(randomTeam)) {
         this.results.push(randomTeam);
         console.log("Résultat de pige:" + randomTeam);
       }
-      i++;
     }
-
-    /*
-    for (let j= this.results.length-1; j>=0; j--) {
-      let team = this.results[j];
-      if (this.finalStandings.indexOf(team) > 0) {
-        this.finalStandings.splice(this.finalStandings.indexOf(team), 1);
-        this.finalStandings.unshift(team);
-      }
-    }*/
 
     let firstPickWinner = this.results[0];
     let secondPickWinner = this.results[1];
@@ -152,7 +139,7 @@ export class AppComponent implements OnInit {
     shift           X      X
   */
   getRandomTeam(): string {
-    var r = Math.random() * this.accumulatedWeight;
+    let r = Math.random() * this.accumulatedWeight;
     console.log("Valeur pigée " + r + " sur " + this.accumulatedWeight);
     // this.entries.find(entry.accumulatedWeight >= r)
     return this.entries.find(function (entry) {
