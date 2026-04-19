@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
-/* 2020 standings
-1- Ottawa 18,5% (185)
-2- Vegas 13,5% (135)
-3- Detroit 11,5% (115)
-4- Nashville 9,5% (95)
-5- Philadelphie 8,5% (85)
-6- Chicago 7,5% (75)
-7- Winnipeg 6,5% (65)
-8- Tampa Bay 6% (60)
-9- Montréal 5% (50)
-10- NYIslanders 3,5% (35)
-11- Toronto 3% (30)
-12- Los Angeles 2,5% (25)
-13- Vancouver 2% (20)
-14- San Jose 1,5% (15)
-15- Caroline 1% (10)
+/* 2026 standings
+1- Florida Panthers
+2- Edmonton Oilers
+3- Minnesota Wild
+4- Montreal Canadiens
+5- Anaheim Ducks
+6- Dallas Stars
+7- Vancouver Canucks
+8- Detroit Red Wings
+9- Toronto Leafs
+10- Columbus Jackets
+11- Los Angeles Kings
+12- New Jersey Devils
+13- Philadelphia Flyers
+14- Washington Capitals
+15- Calgary Flames
+16- Colorado Avalanche
 */
 
 @Component({
@@ -24,7 +25,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'Loterie 2025';
+  title = 'Loterie 2026';
   draftDone: boolean = false;
   displayResultsDone: boolean = false;
 
@@ -40,24 +41,24 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.addEntry(1, "Seattle", 18.5); 
-    this.addEntry(2, "Floride", 13.5); 
-    this.addEntry(3, "Edmonton", 11.5); 
-    this.addEntry(4, "Vancouver", 9.5);
-    this.addEntry(5, "Minnesota", 8.5);
+    this.addEntry(1, "Floride", 18.5);
+    this.addEntry(2, "Edmonton", 13.5);
+    this.addEntry(3, "Minnesota", 11.5);
+    this.addEntry(4, "Montréal", 9.5);
+    this.addEntry(5, "Anaheim", 8.5);
 
-    this.addEntry(6, "Montréal", 7.5);
-    this.addEntry(7, "Anaheim", 6.5);
-    this.addEntry(8, "St-Louis", 6.0);
-    this.addEntry(9, "Ottawa", 5);
-    this.addEntry(10, "Pittsburgh", 3.5);
+    this.addEntry(6, "Dallas", 7.5);
+    this.addEntry(7, "Vancouver", 6.5);
+    this.addEntry(8, "Detroit", 6.0);
+    this.addEntry(9, "Toronto", 5);
+    this.addEntry(10, "Columbus", 3.5);
 
     this.addEntry(11, "Los Angeles", 3.0);
-    this.addEntry(12, "Dallas", 2.5);
+    this.addEntry(12, "New-Jersey", 2.5);
     this.addEntry(13, "Philadelphie", 2);
-    this.addEntry(14, "Tampa Bay", 1.5);
-    this.addEntry(15, "Boston", 0.5);
-    this.addEntry(16, "Columbus", 0.5);
+    this.addEntry(14, "Washington", 1.5);
+    this.addEntry(15, "Calgary", 0.5);
+    this.addEntry(16, "Colorado", 0.5);
   }
 
   onDraft(): void {
