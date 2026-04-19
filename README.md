@@ -1,28 +1,21 @@
 # lhsdb.lottery
-Lotterie LHSDB 2021
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
+Loterie LHSDB — NHL draft lottery simulator for the LHSDB fantasy hockey league.
 
-## Development server
+Built with [Angular](https://angular.io/) 13 and Bootstrap 4.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Development
 
-## Code scaffolding
+```bash
+npm start        # Dev server at http://localhost:4200
+npm run build    # Development build → dist/lhsdb-lottery/
+ng build --configuration production  # Production build
+npm test         # Unit tests via Karma
+npm run lint     # Lint TypeScript and HTML
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Updating for a new season
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+1. Edit `ngOnInit` in `src/app/app.component.ts` — update each `addEntry(rank, team, weight%)` call with the new standings and lottery odds (weights should sum to 100).
+2. Update the `title` field and the heading in `src/app/app.component.html`.
+3. Add team logo images (lowercase `.jpg`) to `src/assets/img/logos/`.
