@@ -31,12 +31,13 @@ export class AppComponent implements OnInit {
 
   entries = [];
   accumulatedWeight = 0.0;
-  actualStandings1 = [];
-  actualStandings2 = [];
   finalStandings = [];
   results: string[] = [];
   displayedResults = [];
   displayedIndex = 0;
+
+  pickSlots1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  pickSlots2 = [11, 12, 13, 14, 15, 16];
 
   ngOnInit() {
     this.addEntry(1, "Floride", 18.5);
@@ -120,15 +121,9 @@ export class AppComponent implements OnInit {
 
   addEntry(rank: number, team: string, weight: number) {
     this.accumulatedWeight += weight;
-    this.entries.push({ rank: rank, name: team, accumulatedWeight: this.accumulatedWeight });
+    this.entries.push({ rank: rank, name: team, weight: weight, accumulatedWeight: this.accumulatedWeight });
     this.finalStandings.push(team);
 
-    if (this.actualStandings1.length < 8) {
-      this.actualStandings1.push(rank + "- " + team + "(" + weight + "%)")
-    }
-    else {
-      this.actualStandings2.push(rank + "- " + team + "(" + weight + "%)")
-    }
   }
   
   /*
